@@ -1,0 +1,102 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>Adivina el Pokémon</ion-title>
+
+    <ion-buttons slot="start">
+      <ion-back-button text="Regresar"
+                      color="danger"
+                      defaultHref="/mainPage"
+      >
+    
+      </ion-back-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+
+</ion-header>
+
+
+
+<ion-content>
+
+<!------------------------------------------------------------------->
+
+   
+ <ion-card class="tarjeta" style="width: 225px; height: auto;">
+    <ion-img  style="width: auto; height: 195px; margin-bottom:0px ;" [src]=pokemonImg></ion-img>
+    <ion-card-header>
+      <ion-card-title class="fontSize">{{pokemonName}}</ion-card-title>
+   </ion-card-header>
+
+
+    <ion-item color="danger">
+      <ion-label  position="stacked">¿Who's that Pokemon? </ion-label>
+      <ion-input  style="color:#ffcb05" 
+                type="text"
+                [(ngModel)]="nombreIngresado"
+                  required>
+      </ion-input>
+  </ion-item>
+  <!-- <ion-label>{{nombreIngresado}}</ion-label> -->
+
+  </ion-card>
+<!------------------------------------------------------------------->
+<ion-chip class="marcador">
+  <label >{{acertados}} </label>
+  <label *ngIf="marcador >-1">{{marcador}}</label>
+</ion-chip>
+
+<!------------------------------------------------------------------->
+
+  <ion-button *ngIf="marcador >=0"
+              class="tamano"
+              fill="solid"
+              color="dark" 
+              expand="block" 
+              (click)="confirmar()">
+              <ion-icon name="refresh-outline" slot="start"></ion-icon>
+    Confirmar
+  </ion-button>
+
+
+  <ion-button *ngIf="marcador <0"
+    class="tamano"
+    fill="solid"
+    color="danger" 
+    expand="block" 
+    (click)="reiniciar()">
+    <ion-icon name="refresh-outline" slot="start"></ion-icon>
+reiniciar
+</ion-button>
+
+<!---------------------------------->
+  <!-- <form #formulario="ngForm" (ngSubmit)="onSubmitTemplate()">
+
+    <ion-list-header>
+      <ion-label>Fromulario template:valido {{formulario.valid}}</ion-label>
+    </ion-list-header>
+
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="text"
+                    name="email"
+                    pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                    type="email"
+                    [(ngModel)] = "usuario.email"
+                    required>
+        </ion-input>
+      </ion-item>
+    </ion-list>
+  
+    <ion-button expand="full" type="subfmit"
+                [disabled]="formulario.invalid">
+    buscar
+    </ion-button>
+
+      
+  </form> -->
+
+<!---------------------------------->
+
+</ion-content>

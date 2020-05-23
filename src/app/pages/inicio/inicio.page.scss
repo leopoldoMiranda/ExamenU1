@@ -1,0 +1,32 @@
+.tarjeta{
+    width: auto; 
+    height: 125px;
+    background-color: #3d7dca;
+    // display: inline-block;
+    margin-left: 18%;
+    margin-top: 50px;
+    padding-bottom: 20px;
+}
+
+.fontSize{
+    margin-top: 0;
+    font-size: 15px;
+    color: #ffcb05;
+    text-align: center;
+}
+
+ion-content{
+    --background:url("/assets/pokeBg.png") no-repeat 100% 100%;
+}
+
+.tamano{
+    margin-left: 85px;
+    margin-top: 50px;
+    width: 180px;
+    
+}
+
+.marcador{
+    background-color: white;
+    margin-left: 22%;
+}
